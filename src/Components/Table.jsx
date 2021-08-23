@@ -15,6 +15,15 @@ function Table() {
         </tr>
       </thead>
       <tbody>
+        <For each={data.map((_, idx) => idx)}>
+          {(index) => (
+            <tr>
+              <For each={columnRemap[index]}>
+                {(mapel) => <td>{mapel === null ? "" : mapel}</td>}
+              </For>
+            </tr>
+          )}
+        </For>
         {/*<tr>
           <td>Francisco</td>
           <td>Valencia, Spain</td>
