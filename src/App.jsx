@@ -1,23 +1,16 @@
-import logo from "./logo.svg";
 import styles from "./App.module.css";
+
+import Table from "./Components/Table";
 
 function App() {
   return (
-    <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
+    <div className={`flex one ${styles.App}`}>
+      <div>
+        <h1>Jadwal Pelajaran Kelas X Bahasa</h1>
+      </div>
+      <div>
+        <Table />
+      </div>
     </div>
   );
 }
