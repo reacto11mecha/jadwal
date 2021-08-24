@@ -3,7 +3,11 @@
 }
 
 .highlighted {
-  background-color: #ff4136;
+  background-color: #8ecae6;
+}
+
+.highlightedNextDay {
+  background-color: #219ebc;
   color: white;
 }
 
