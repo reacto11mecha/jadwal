@@ -33,5 +33,8 @@ const newArray = Array.from(new Array(longest));
 
 export default jadwal;
 export const columnRemap = newArray.map((_, idx) =>
-  jadwal.map(({ mapel }) => mapel[idx])
+  jadwal.map((data) => ({
+    mapel: data.mapel[idx],
+    index: jadwal.findIndex((x) => x.hari === data.hari) + 1,
+  }))
 );

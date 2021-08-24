@@ -21,7 +21,17 @@ function Table() {
             {(index) => (
               <tr className={styles.center}>
                 <For each={columnRemap[index]}>
-                  {(mapel) => <td>{mapel === null ? "" : mapel}</td>}
+                  {(mataPelajaran) => (
+                    <td
+                      className={
+                        mataPelajaran.index === currentDayIndex()
+                          ? styles.highlighted
+                          : ""
+                      }
+                    >
+                      {mataPelajaran.mapel === null ? "" : mataPelajaran.mapel}
+                    </td>
+                  )}
                 </For>
               </tr>
             )}
