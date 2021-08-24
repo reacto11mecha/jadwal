@@ -8,9 +8,7 @@ function App() {
       <div>
         <h1>Jadwal Pelajaran Kelas X Bahasa</h1>
       </div>
-      <div>
-        <Table />
-      </div>
+      <Table />
     </div>
   );
 }

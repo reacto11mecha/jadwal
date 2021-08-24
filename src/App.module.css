@@ -5,3 +5,10 @@
   margin: 0 auto;
   padding: 10px 0 0;
 }
+
+@media (min-width: 300px) and (max-width: 1056px) {
+  .App {
+    width: auto;
+    max-width: none;
+  }
+}
