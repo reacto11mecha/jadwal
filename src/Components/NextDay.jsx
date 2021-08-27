@@ -4,11 +4,7 @@ import data from "../Misc/data";
 import styles from "./NextDay.module.css";
 
 function NextDay({ nextDay }) {
-  const next = createMemo(() =>
-    data[nextDay() - 1].mapel
-      .filter((x) => x !== undefined)
-      .filter((x) => x !== null)
-  );
+  const next = createMemo(() => data[nextDay() - 1]);
 
   return (
     <div className={styles.nextDay}>
@@ -16,7 +12,14 @@ function NextDay({ nextDay }) {
       <p>
         Hari Belajar Selanjutnya adalah hari <b>{next().hari}</b>
       </p>
-      <p>Mapel: {next().join(", ")}.</p>
+      <p>
+        Mapel:{" "}
+        {next()
+          .mapel.filter((x) => x !== undefined)
+          .filter((x) => x !== null)
+          .join(", ")}
+        .
+      </p>
     </div>
   );
 }
