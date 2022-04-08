@@ -11,7 +11,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^4.0.3",
     "vite": "^2.4.4",
     "vite-plugin-solid": "^2.0.1"
   },
