@@ -2,15 +2,6 @@
   text-align: center;
 }
 
-.highlighted {
-  background-color: #8ecae6;
-}
-
-.highlightedNextDay {
-  background-color: #219ebc;
-  color: white;
-}
-
 @media (min-width: 300px) and (max-width: 1056px) {
   .table {
     width: 100%;

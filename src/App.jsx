@@ -1,9 +1,12 @@
 import { createMemo } from "solid-js";
-
-import styles from "./App.module.css";
+import { HopeProvider, Container } from "@hope-ui/solid";
 
 import Table from "./Components/Table";
 import NextDay from "./Components/NextDay";
+
+const config = {
+  initialColorMode: "system",
+};
 
 function App() {
   const currentDayIndex = createMemo(() => new Date().getDay());
@@ -15,10 +18,12 @@ function App() {
   });
 
   return (
-    <div className={`flex one ${styles.App}`}>
-      <Table currentDayIndex={currentDayIndex} nextDay={nextDay} />
-      <NextDay nextDay={nextDay} />
-    </div>
+    <HopeProvider config={config}>
+      <Container p="$4">
+        <Table currentDayIndex={currentDayIndex} nextDay={nextDay} />
+        <NextDay nextDay={nextDay} />
+      </Container>
+    </HopeProvider>
   );
 }
 

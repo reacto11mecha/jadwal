@@ -1,46 +1,49 @@
+import { For } from "solid-js";
+import { VStack, Text, Table, Thead, Tbody, Tr, Th, Td } from "@hope-ui/solid";
+
 import styles from "./Table.module.css";
 import data, { columnRemap } from "../Misc/data";
 
-const Table = ({ currentDayIndex, nextDay }) => (
-  <>
-    <div>
-      <h1 className={styles.center}>Jadwal Pelajaran Kelas X Bahasa</h1>
-    </div>
+const TableComponent = ({ currentDayIndex, nextDay }) => (
+  <VStack spacing="$6" alignItems="flex-center">
+    <Text size="4xl" className={styles.center}>
+      Jadwal Pelajaran Kelas X Bahasa
+    </Text>
     <div className={styles.scrollableHorizontal}>
-      <table className={`primary ${styles.table}`}>
-        <thead>
-          <tr>
+      <Table className={styles.table}>
+        <Thead>
+          <Tr>
             <For each={data.map(({ hari }) => hari)}>
-              {(item) => <th className={styles.center}>{item}</th>}
+              {(item) => <Th className={styles.center}>{item}</Th>}
             </For>
-          </tr>
-        </thead>
-        <tbody>
+          </Tr>
+        </Thead>
+        <Tbody>
           <For each={data.map((_, idx) => idx)}>
             {(index) => (
-              <tr className={styles.center}>
+              <Tr className={styles.center}>
                 <For each={columnRemap[index]}>
                   {(mataPelajaran) => (
-                    <td
-                      className={
+                    <Td
+                      bg={
                         mataPelajaran.index === currentDayIndex()
-                          ? styles.highlighted
+                          ? "$primary8"
                           : mataPelajaran.index === nextDay()
-                          ? styles.highlightedNextDay
+                          ? "$primary9"
                           : ""
                       }
                     >
                       {mataPelajaran.mapel === null ? "" : mataPelajaran.mapel}
-                    </td>
+                    </Td>
                   )}
                 </For>
-              </tr>
+              </Tr>
             )}
           </For>
-        </tbody>
-      </table>
+        </Tbody>
+      </Table>
     </div>
-  </>
+  </VStack>
 );
 
-export default Table;
+export default TableComponent;
