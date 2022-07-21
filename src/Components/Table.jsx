@@ -7,7 +7,7 @@ import data, { columnRemap } from "../Misc/data";
 const TableComponent = ({ currentDayIndex, nextDay }) => (
   <VStack spacing="$6" alignItems="flex-center">
     <Text size="4xl" className={styles.center}>
-      Jadwal Pelajaran Kelas X Bahasa
+      Jadwal Pelajaran Kelas XI Bahasa
     </Text>
     <div className={styles.scrollableHorizontal}>
       <Table className={styles.table}>
